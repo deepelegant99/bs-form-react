@@ -1,6 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Bsform = () =>{
+
+    const [name, setName]=useState('');
+    const [address, setAddress]=useState('');
+
+    const onclickHandlier = (e)=>{
+        e.preventDefault()
+        if (name==='' || address==''){
+            console.log("please fill out the fields")
+        }
+    }
+
+    const nameHandlier = (e)=>{
+        setName(e.target.value)
+    }
+
+    const addressHandlier = (e)=>{
+        setAddress(e.target.value)
+    }
+
     return (
     <section class="container">
       <form id="my-form">
@@ -8,13 +27,13 @@ const Bsform = () =>{
         <div class="msg"></div>
         <div>
           <label for="name">Name:</label>
-          <input type="text" id="name" />
+          <input onChange={nameHandlier} type="text" id="name" value={name} />
         </div>
         <div>
           <label for="email">Email:</label>
-          <input type="text" id="email" />
+          <input onChange={addressHandlier} type="text" id="email" value={address} />
         </div>
-        <input class="btn" type="submit" value="Submit" />
+        <input onClick={onclickHandlier} class="btn" type="submit" value="Submit" />
       </form>
 {/* 
       <ul id="users"></ul>
