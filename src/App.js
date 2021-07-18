@@ -1,11 +1,12 @@
 import './App.css';
+import Bsform from './components/Bsform';
+import Bshead from './components/Bshead';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-          <h1>Hello World</h1>
-      </header>
+    <div>
+      <Bshead />
+      <Bsform />
     </div>
   );
 }
