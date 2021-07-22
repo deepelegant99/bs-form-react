@@ -9,6 +9,10 @@ const Bsform = () => {
   useEffect(() => {
     if (err === true) {
       setErrorMessage("Please enter required fields");
+      setTimeout(() =>{
+        setErr(false)
+        setErrorMessage("")
+      }, 3000);
     }
   }, [err]);
 
