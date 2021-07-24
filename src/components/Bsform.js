@@ -9,9 +9,9 @@ const Bsform = () => {
   useEffect(() => {
     if (err === true) {
       setErrorMessage("Please enter required fields");
-      setTimeout(() =>{
-        setErr(false)
-        setErrorMessage("")
+      setTimeout(() => {
+        setErr(false);
+        setErrorMessage("");
       }, 3000);
     }
   }, [err]);
@@ -20,6 +20,10 @@ const Bsform = () => {
     e.preventDefault();
     if (name === "" || address == "") {
       setErr(true);
+    } else {
+      document.querySelector("body").classList.add("bg-dark");
+      setName("");
+      setAddress("");
     }
   };
 
